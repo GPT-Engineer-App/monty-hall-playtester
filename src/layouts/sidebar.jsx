@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Gamepad2 } from "lucide-react"; // Change icon to Gamepad2
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -23,7 +23,7 @@ const Layout = () => {
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
           <UserDropdown />
         </header>
-        <main className="flex-grow p-4 overflow-auto">
+        <main className="flex-grow p-4 overflow-auto bg-gray-100"> {/* Update main element classNames */}
           <Outlet />
         </main>
       </div>
@@ -36,8 +36,8 @@ const Sidebar = () => (
     <div className="flex h-full max-h-screen flex-col gap-2">
       <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
         <NavLink to="/" className="flex items-center gap-2 font-semibold">
-          <Package2 className="h-6 w-6" />
-          <span>Acme Inc</span>
+          <Gamepad2 className="h-6 w-6" /> {/* Change icon to Gamepad2 */}
+          <span>ModiP</span> {/* Change app name to ModiP */}
         </NavLink>
       </div>
       <div className="flex-1">
@@ -68,8 +68,8 @@ const MobileSidebar = () => (
           to="/"
           className="flex items-center gap-2 text-lg font-semibold mb-4"
         >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <Gamepad2 className="h-6 w-6" /> {/* Change icon to Gamepad2 */}
+          <span className="sr-only">ModiP</span> {/* Change app name to ModiP */}
         </NavLink>
         {navItems.map((item) => (
           <SidebarNavLink key={item.to} to={item.to}>
